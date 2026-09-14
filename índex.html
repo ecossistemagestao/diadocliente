@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Proposta Dia do Cliente · Cora·Li</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#1a1a1a;font-family:'Inter',sans-serif;display:flex;justify-content:center;padding:0;}
+.card{width:390px;background:#faf0ee;overflow:hidden;padding-bottom:32px;position:relative;}
+.bg1{position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,124,.15),transparent 70%);pointer-events:none;}
+.bg2{position:absolute;bottom:80px;left:-50px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(232,196,184,.2),transparent 70%);pointer-events:none;}
+
+/* TOPO ESCURO */
+.top{background:#2c1a1a;padding:22px 22px 22px;position:relative;overflow:hidden;}
+.top::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#e8c4b8,transparent);}
+.top-row{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.logo-circle{width:38px;height:38px;border-radius:50%;overflow:hidden;border:1.5px solid rgba(232,196,184,.3);flex-shrink:0;}
+.logo-circle img{width:100%;height:100%;object-fit:cover;}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;color:#fff;}
+.logo-name span{display:block;font-size:7px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#e8c4b8;font-family:'Inter',sans-serif;margin-top:2px;}
+.top-badge{margin-left:auto;background:rgba(232,196,184,.12);border:1px solid rgba(232,196,184,.2);border-radius:20px;padding:4px 11px;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#e8c4b8;}
+.top-date{font-size:8.5px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(232,196,184,.5);margin-bottom:7px;}
+.top-title{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:300;color:#fff;line-height:1.1;margin-bottom:5px;}
+.top-title strong{font-weight:700;}
+.top-script{font-family:'Dancing Script',cursive;font-size:14px;color:rgba(232,196,184,.45);}
+
+/* SAUDAÇÃO */
+.box{margin:16px 16px 0;background:#fff;border-radius:12px;padding:15px 16px;border:1px solid #e8d8d0;position:relative;z-index:2;}
+.greeting{font-size:14px;font-weight:700;color:#2c1a1a;margin-bottom:8px;}
+.body-text{font-size:12px;font-weight:300;color:#6b4a3e;line-height:1.75;}
+.body-text strong{font-weight:600;color:#2c1a1a;}
+
+.sep{margin:14px 16px;height:1px;background:linear-gradient(90deg,transparent,#e8d8d0,transparent);}
+
+/* LABEL SEÇÃO */
+.sec-label{font-size:8px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#c9a87c;margin:0 16px 10px;display:flex;align-items:center;gap:8px;position:relative;z-index:2;}
+.sec-label::after{content:'';flex:1;height:1px;background:rgba(201,168,124,.3);}
+
+/* ETAPAS */
+.etapas{margin:0 16px;position:relative;z-index:2;}
+.etapa{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(232,216,208,.5);}
+.etapa:last-child{border-bottom:none;}
+.e-num{width:26px;height:26px;border-radius:50%;background:#2c1a1a;color:#e8c4b8;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.e-title{font-size:12.5px;font-weight:700;color:#2c1a1a;margin-bottom:2px;}
+.e-sub{font-size:11.5px;font-weight:300;color:#6b4a3e;line-height:1.65;}
+.e-sub strong{font-weight:600;color:#2c1a1a;}
+
+/* DESTAQUE CAIXINHA */
+.destaque{margin:14px 16px 0;background:#2c1a1a;border-radius:12px;padding:15px 16px;display:flex;align-items:center;gap:14px;position:relative;z-index:2;}
+.dest-icon{font-size:30px;flex-shrink:0;}
+.dest-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:#fff;margin-bottom:3px;}
+.dest-title strong{font-weight:700;color:#e8c4b8;}
+.dest-sub{font-size:11px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.5;}
+
+/* PARCEIRAS */
+.micro{margin:12px 16px 0;background:#fff;border-radius:12px;padding:13px 15px;border:1px solid #e8d8d0;position:relative;z-index:2;}
+.micro-label{font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#c9a87c;margin-bottom:9px;}
+.micro-row{display:flex;align-items:center;gap:8px;}
+.micro-pill{flex:1;background:#f7f0eb;border-radius:8px;padding:9px 8px;text-align:center;border:1px solid #e8d8d0;}
+.micro-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#2c1a1a;display:block;line-height:1;}
+.micro-sub{font-size:8.5px;font-weight:500;color:#6b4a3e;margin-top:1px;}
+.arrow{font-size:16px;color:#c9a87c;flex-shrink:0;}
+
+/* REFS */
+.refs{margin:12px 16px 0;position:relative;z-index:2;}
+.ref-item{display:flex;align-items:center;gap:10px;background:#fff;border-radius:9px;border:1px solid #e8d8d0;padding:10px 12px;margin-bottom:7px;}
+.ref-icon{font-size:15px;flex-shrink:0;}
+.ref-label{font-size:11px;font-weight:600;color:#2c1a1a;}
+.ref-url{font-size:9.5px;font-weight:300;color:#6b4a3e;margin-top:1px;}
+.ref-badge{margin-left:auto;font-size:8px;font-weight:700;background:#e8c4b8;color:#2c1a1a;padding:3px 8px;border-radius:6px;white-space:nowrap;}
+
+/* FOOTER */
+.footer{margin:20px 16px 0;text-align:center;position:relative;z-index:2;}
+.footer-script{font-family:'Dancing Script',cursive;font-size:15px;color:rgba(44,26,26,.35);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="bg1"></div>
+  <div class="bg2"></div>
+
+  <div class="top">
+    <div class="top-row">
+      <div class="logo-circle"><img src="data:image/jpeg;base64,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" alt=""/></div>
+      <div class="logo-name">Cora·Li Fit</div>
+      <div class="top-badge">Proposta</div>
+    </div>
+    <div class="top-date">15 de Setembro · Dia do Cliente</div>
+    <div class="top-title">Ação de<br><strong>Microinfluenciadoras</strong></div>
+    <div class="top-script">uma parceria que gera conteúdo real</div>
+  </div>
+
+  <!-- SAUDAÇÃO -->
+  <div class="box">
+    <div class="greeting">Bom dia, Nicolle! 🩷</div>
+    <div class="body-text">
+      Para o <strong>Dia do Cliente</strong>, pensamos em fazer uma ação diferente — postar um Reels convidando parceiras para receber uma <strong>caixinha especial da Cora·Li</strong> e, em troca, compartilharem a experiência nos Stories e fazerem um Reels em <strong>collab com a gente</strong>. A ideia é deixar a ação bem espontânea e aproveitar a data para aproximar a Cora·Li de novas pessoas. 🩷
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- COMO FUNCIONA -->
+  <div class="sec-label">Como vai funcionar</div>
+  <div class="etapas">
+    <div class="etapa">
+      <div class="e-num">01</div>
+      <div>
+        <div class="e-title">Postamos o Reels convidando</div>
+        <div class="e-sub">No vídeo, pedimos para as interessadas comentarem <strong>"Eu quero participar"</strong> — deixando a ação orgânica e espontânea.</div>
+      </div>
+    </div>
+    <div class="etapa">
+      <div class="e-num">02</div>
+      <div>
+        <div class="e-title">Você escolhe as parceiras</div>
+        <div class="e-sub">A partir dos comentários, selecionamos <strong>3 a 5 microinfluenciadoras</strong> dependendo de quantas caixinhas estiverem disponíveis.</div>
+      </div>
+    </div>
+    <div class="etapa">
+      <div class="e-num">03</div>
+      <div>
+        <div class="e-title">Elas recebem e criam conteúdo</div>
+        <div class="e-sub">Cada parceira compartilha nos Stories, produz fotos e faz um <strong>Reels em collab</strong> com o @coralifit.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAIXINHA -->
+  <div class="destaque">
+    <div class="dest-icon">🎁</div>
+    <div>
+      <div class="dest-title">A <strong>caixinha especial</strong> Cora·Li</div>
+      <div class="dest-sub">Quantas caixinhas você consegue separar para essa ação?</div>
+    </div>
+  </div>
+
+  <!-- PARCEIRAS -->
+  <div class="micro">
+    <div class="micro-label">Parceiras selecionadas</div>
+    <div class="micro-row">
+      <div class="micro-pill"><span class="micro-num">3</span><div class="micro-sub">mínimo</div></div>
+      <div class="arrow">→</div>
+      <div class="micro-pill"><span class="micro-num">5</span><div class="micro-sub">máximo</div></div>
+      <div class="arrow">→</div>
+      <div class="micro-pill" style="background:#2c1a1a;border-color:#2c1a1a;"><span class="micro-num" style="color:#e8c4b8;">você</span><div class="micro-sub" style="color:rgba(232,196,184,.55);">decide</div></div>
+    </div>
+  </div>
+
+  <!-- REFERÊNCIAS -->
+  <div class="refs">
+    <div class="sec-label" style="margin:12px 0 8px;">Referências de Reels</div>
+    <div class="ref-item">
+      <div class="ref-icon">📱</div>
+      <div>
+        <div class="ref-label">Referência 01</div>
+        <div class="ref-url">instagram.com/p/DcZRNU-vZSp/</div>
+      </div>
+      <div class="ref-badge">Abrir</div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-icon">📱</div>
+      <div>
+        <div class="ref-label">Referência 02</div>
+        <div class="ref-url">instagram.com/p/DbB1EUqJWT5/</div>
+      </div>
+      <div class="ref-badge">Abrir</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-script">O que acha, Nicolle? 🩷</div>
+  </div>
+</div>
+</body>
+</html>
